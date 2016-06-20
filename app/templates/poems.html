@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} ({{ author}})</title>
+    <style type="text/css">
+            /*body{
+                background-color: #CCFF80;
+                margin-left: 20%;
+                margin-right: 20%;
+                border: 2px dotted black;
+                padding: 10px 10px 10px 10px;
+                font-family: STSong;
+            }*/
+            body{
+                background-color: #53FF53;
+                font-family: STSong;
+                font-size: small;
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            div#tableContainer{
+               	display: table;
+	            border-spacing: 10px;
+            }
+            div#tableRow{
+                display: table-row;
+            }
+            section#works{
+                display: table-cell;
+                background-color: #79FF79;
+                width: 20%;
+                padding: 15px;
+                vertical-align: top;
+            }
+            section#content{
+                display: table-cell;
+                background: #79FF79;
+                font-size: 105%;
+                padding: 15px;
+                vertical-align: top;
+            }
+            aside {
+                display: table-cell;
+                background: #79FF79;
+                font-size: 105%;
+                padding: 15px;
+                vertical-align: top;
+            }
+        </style>
+</head>
+<body>
+    <div id="tableContainer">
+    	<div id="tableRow">
+            <section id="works">
+                <!--<img src="http://img1.imgtn.bdimg.com/it/u=2468316743,1417834526&fm=21&gp=0.jpg" width="300px">-->
+                <img src={{ img_url }} width="150px">
+                <ul>
+                    {% for poem in list_of_poems %}
+                        <li>{{ poem }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section id="content">
+                <h2>{{ title }}</h2>
+                <h3>{{ author }}</h3>
+                {% for seg in sen_list %}
+                    {% for sen in seg %}
+                        <p>{{ sen.strip() }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </section>
+            <aside id="recommended">
+                <ul>
+                    <li>poem1</li>
+                    <li>poem2</li>
+                </ul>
+            </aside>
+        </div> <!-- tableRow -->
+    	</div> <!-- tableContainer -->
+</body>
+</html>

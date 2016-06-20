@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Chinese Modern Poetry</title>
+        <style>
+            body{
+                background-color: #53FF53;
+                font-family: STSong;
+                font-size: small;
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Chinese Modern Poems List</h1>
+        {% for key in p2o.keys() %}
+            <p><em><a href="/poem/{{ p2o[key] }}.html">{{ key }}</a></em></p>
+        {% endfor %}
+    </body>
+</html>

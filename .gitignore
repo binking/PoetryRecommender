@@ -1,0 +1,4 @@
+# ignore flask dev
+flask
+# python
+*.py[cod]
