@@ -1,4 +1,6 @@
 # ignore flask dev
 flask
+.idea
 # python
 *.py[cod]
+*.*~
